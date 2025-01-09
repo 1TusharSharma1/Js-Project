@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up / Login</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <script src = "./js/auth.js"></script>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Sign Up Form -->
+    <form class="form signup-form">
+      <h1>Sign Up</h1>
+      <!-- <label for="signUpEmail">Enter Email</label> -->
+      <input type="email" id="signUpEmail" placeholder="Enter Email" />
+
+      <!-- <label for="signUpUsername">Enter Username</label> -->
+      <input type="text" id="signUpUsername" placeholder="Enter Username" />
+
+      <!-- <label for="signUpPassword">Enter Password</label> -->
+      <input type="password" id="signUpPassword" placeholder="Enter Password" />
+
+      <button type="submit">Sign Up</button>
+
+      <p > Already have an account <a id="goToLogin" href="#">Login?</a> </p>
+
+    </form>
+
+    <!-- Login Form -->
+    <form class="form login-form hidden">
+      <h1>Login</h1>
+      <label for="loginEmail">Enter Email</label>
+      <input type="email" id="loginEmail" placeholder="Enter Email" />
+
+      <label for="loginPassword">Enter Password</label>
+      <input type="password" id="loginPassword" placeholder="Enter Password" />
+
+      <button type="submit">Login</button>
+
+      <p > New Here? <a id="goToSignUp" href="#">Signup</a> </p>
+
+    </form>
+
+
+  </div>
+  
+  
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Matching Game</title>
+  <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+
+  <header>
+    <h1>Memory Matching Game</h1>
+
+    <div class="stats">
+
+      <p>Moves: <span id="moves">0</span></p>
+      <p>Time: <span id="timer">00:00</span></p>
+      <p>Best Score: <span id="bestScore">N/A</span></p>
+
+    </div>
+
+    <button id="restartButton">Restart</button>
+    <button id="logoutButton">Logout</button>
+  </header>
+
+  <main>
+    <div id="gameBoard" class="game-board">
+    </div>
+  </main>
+
+  <script src="js/game.js"></script>
+</body>
+</html>
