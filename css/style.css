@@ -4,7 +4,6 @@
     box-sizing: border-box;
   }
   
-  /* General Body Styling */
   body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -14,7 +13,6 @@
     background-color: #f4f4f9;
   }
   
-  /* Container Styling */
   .container {
     background: white;
     padding: 20px;
@@ -24,7 +22,6 @@
     text-align: center;
   }
   
-  /* Form Styling */
   .form {
     display: flex;
     flex-direction: column;
@@ -58,12 +55,10 @@
     background: #0056b3;
   }
   
-  /* Hidden Form */
   .hidden {
     display: none;
   }
   
-  /* Responsive Design */
   @media (max-width: 400px) {
     .container {
       width: 90%;

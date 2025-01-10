@@ -1,4 +1,3 @@
-// DOM Elements
 const gameBoard = document.getElementById("gameBoard");
 const movesCounter = document.getElementById("moves");
 const timerDisplay = document.getElementById("timer");
@@ -6,7 +5,10 @@ const bestScoreDisplay = document.getElementById("bestScore");
 const restartButton = document.getElementById("restartButton");
 const logoutButton = document.getElementById("logoutButton");
 
-// Game Variables
+
+
+
+
 let cards = [];
 let flippedCards = [];
 let matchedCards = [];
@@ -15,8 +17,14 @@ let timer;
 let startTime;
 let loggedInUser = JSON.parse(localStorage.getItem("loggedInUser")) || '';
 
-// Fetch Users from localStorage
 let users = JSON.parse(localStorage.getItem("users")) || [];
+
+
+(function(){
+    if(loggedInUser===""){
+        window.location.href = "index.html";
+    }
+    }())
 
 function getUserDetailsByUsername(username) {
     const user = users.find(user => user.username === username);
@@ -125,7 +133,7 @@ gameBoard.addEventListener("click", (e) => {
           }else if(flippedCards.length==2){
             flippedCards=[]
           }
-      }, 1000);
+      }, 450);
     }
   
     moves++;
@@ -156,6 +164,7 @@ function endGame() {
   const elapsedTime = Math.floor((Date.now() - startTime) / 1000);
   alert(`Game Over! You completed the game in ${moves} moves and ${elapsedTime} seconds.`);
   updateUserBestScore(bestScore, moves, elapsedTime);
+  restartButton.click();
 }
 
 function updateUserBestScore(bestScore, newMoves, newTime) {
@@ -169,6 +178,7 @@ function updateUserBestScore(bestScore, newMoves, newTime) {
 }
 
 restartButton.addEventListener("click", () => {
+    
   moves = 0;
   matchedCards = [];
   flippedCards = [];
@@ -180,10 +190,23 @@ restartButton.addEventListener("click", () => {
   displayBestScore(bestScore);
 
 });
-
+function showConfirmationModal() {
+    const modal = document.getElementById("confirmModal");
+    overlay.classList.add("show");
+    modal.classList.add("show");
+    document.getElementById("confirmButton").addEventListener("click", () => {
+       
+    localStorage.removeItem("loggedInUser");
+    window.location.href = "index.html";
+    });
+    document.getElementById("cancelButton").addEventListener("click", () => {
+        overlay.classList.remove("show");
+        modal.classList.remove("show");
+    });
+}
 logoutButton.addEventListener("click", () => {
-  localStorage.removeItem("loggedInUser");
-  window.location.href = "index.html";
+    showConfirmationModal();
+  
 });
 
 displayBestScore(bestScore);
