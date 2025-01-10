@@ -99,6 +99,7 @@ gameBoard.addEventListener("click", (e) => {
     }
     console.log(flippedCards,"just after last line of fn");
     
+    
   });
   
   function flipCard(card) {
@@ -107,9 +108,7 @@ gameBoard.addEventListener("click", (e) => {
   
   function checkForMatch() {
     const [card1, card2] = flippedCards;
-    if(flippedCards.length>2){
-  
-    }
+    
     if (card1.dataset.symbol === card2.dataset.symbol) {
       matchedCards.push(card1, card2);
       flippedCards = [];
